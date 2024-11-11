@@ -4,7 +4,7 @@ from surprise import accuracy
 import random
 
 # 데이터셋 로드
-data_path = "../RecommenderSystem/merged_data2.csv"  
+data_path = "merged_data2.csv"  
 full_data = pd.read_csv(data_path)  # CSV 파일을 pandas DataFrame으로 읽기
 
 # 10000개의 샘플을 랜덤으로 추출 (train dataset)
@@ -34,7 +34,7 @@ algo = KNNBasic(sim_options=sim_options)
 algo.fit(data.build_full_trainset())  # trainset만 사용하여 학습
 
 # test dataset 로드
-test_data_path = "../RecommenderSystem/review.csv"  # test 데이터 파일 경로
+test_data_path = "review.csv"  # test 데이터 파일 경로
 
 # test_data 로드 (user_id, business_id, stars, name 열 포함)
 test_data = pd.read_csv(test_data_path, usecols=['user_id', 'stars', 'name'])
